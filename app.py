@@ -8,16 +8,12 @@ import os
 import time 
 import altair as alt 
 
-# --- API キーの設定 ---
-# 【重要】ここにあなたのOpenWeatherMap APIキーを直接記述してください！
 
 OPENWEATHER_API_KEY = os.getenv("WEATHER_API")
 OPENWEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
 
-# 【重要】ここにあなたのGoogle Gemini APIキーを直接記述してください！
 GEMINI_API_KEY = os.getenv("GEMINI_API")
 
-# Gemini API の設定
 if GEMINI_API_KEY and GEMINI_API_KEY != "YOUR_GEMINI_API_KEY":
     genai.configure(api_key=GEMINI_API_KEY)
     model = genai.GenerativeModel('gemini-1.5-flash') 
@@ -584,17 +580,17 @@ if 'walkthrough_step' not in st.session_state:
 # ウォークスルー画面の定義 (main_app関数の外に移動)
 walkthrough_steps = [
     {
-        "image": "Gemini_Generated_Image_66lomq66lomq66lo.png",
+        "image": "data/Gemini_Generated_Image_66lomq66lomq66lo.png",
         "title": "いつでも水分チャージをスマートに！",
         "text": "プッシュ通知をONにすると、あなたに最適なタイミングで水分補給をお知らせします。"
     },
     {
-        "image": "スクリーンショット_23-7-2025_02950_localhost.jpeg",
+        "image": "data/スクリーンショット_23-7-2025_02950_localhost.jpeg",
         "title": "活動や天気に合わせてパーソナル提案",
         "text": "あなたの活動レベルや天気・湿度から、今日必要な水分量をリアルタイムで自動計算します。"
     },
     {
-        "image": "スクリーンショット_22-7-2025_235353_localhost.jpeg",
+        "image": "data/スクリーンショット_22-7-2025_235353_localhost.jpeg",
         "title": "記録も分析もAIにお任せ！",
         "text": "飲んだ量をタップで簡単記録。AIがあなたの水分補給習慣を分析して、健康維持をサポートします！"
     }
